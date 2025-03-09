@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const {AuthRoutes , ApplicationRoutes , FeedbackRoutes , JobPostRoutes} = require("./Routes/routes");
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/hello', (req, res) => res.send('Hello World!'))
 
 
 
