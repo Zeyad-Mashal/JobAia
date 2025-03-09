@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const {AuthRoutes , ApplicationRoutes , FeedbackRoutes , JobPostRoutes} = require("./Routes/routes");
+const { AuthRoutes, ApplicationRoutes, FeedbackRoutes, JobPostRoutes } = require("./Routes/routes");
 
 app.get('/hello', (req, res) => res.send('Hello World!'))
 
@@ -22,9 +22,7 @@ app.use(JobPostRoutes);
 
 const port = process.env.PORT;
 mongoose.connect(process.env.MONGO_URL).then(() => {
-    app.listen(port, () => {
-      console.log(`http://localhost:${port}`);
-    });
-  }).catch((err) => {
-    console.log(err);
-  });
+  app.listen(port);
+}).catch((err) => {
+  console.log(err);
+});
